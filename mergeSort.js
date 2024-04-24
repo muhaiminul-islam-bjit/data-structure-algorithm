@@ -27,5 +27,25 @@ function merge(leftArray, rightArray) {
     .concat(rightArray.slice(rightIndex));
 }
 
+function mergeOptimize(leftArray, rightArray) {
+  let sortedArray = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while (leftArray.length > leftIndex && rightArray.length > rightIndex) {
+    if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+      sortedArray.push(leftArray[leftIndex]);
+      leftIndex++;
+    } else {
+      sortedArray.push(rightArray[rightIndex]);
+      rightIndex++;
+    }
+  }
+
+  return sortedArray
+    .concat(leftArray.slice(leftIndex))
+    .concat(rightArray.slice(rightIndex));
+}
+
 const array = [6, 4, 5, 3, 1, 2];
 console.log(mergeSort(array));
