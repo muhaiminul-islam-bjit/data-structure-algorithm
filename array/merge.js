@@ -13,7 +13,12 @@ function mergeTwoArray(arr1, arr2) {
     return mergedArray;
 }
 
+function mergeTwoArrayDefaultFunction(arr1, arr2) {
+    return [...arr1, ...arr2]
+}
+
 const data = [3, 71, 34, 56, 90];
 const data2 = [20, 30, 40, 50];
 
 console.log(mergeTwoArray(data, data2));
+console.log(mergeTwoArrayDefaultFunction(data, data2));
